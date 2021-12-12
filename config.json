@@ -4,8 +4,32 @@
           "measurment":[
              {"name":"cpu_usage_idle","rename":"CPU_USAGE_IDLE","unit":"Percent"},
              {"name":"cpu_usage_system","rename":"CPU_USAGE_SYSTEM","unit":"Percent"},
-
-
           ]
+       "mem":{
+         "measurment":[
+             {"name":"mem_available","rename":"Memory_Available","unit":"Bytes"},
+             {"name":"mem_available_percent","rename":"Memory_Available_Precent","units":"Percent"},
+             {"name":"mem_used_percent","rename":"Memory_Used_Percent","units":"Percent"},
+             {"name":"mem_free","rename":"Memory_Free","units":"Bytes"},
+             {"name":"mem_total","rename":"Memory_Total","units":"Bytes"},
+             {"name":"mem_used","rename":"Memory_Used","unit":"Bytes"},
+         ]   
+        }  
+        "disk":{
+          "measurment":[
+              {"name":"disk_used_percent","rename":"Disk_Used_Percent","unit":"Percent"},
+              {"name":"disk_total","rename":"Disk_Total","untit":"Bytes"},
+              {"name":"disk_used","rename":"Disk_Used","untit":"Bytes"},
+              {"name":"disk_free","rename":"Disk_Free","untit":"Bytes"}
+          ]
+        }
+        "net":{
+         "measurement":[
+             {"name":"netstat_tcp_established","rename":"TCP_Establiched_Connection","unit":"Count"},
+             {"name":"netstat_tcp_time_wait","rename":"TCP_Time_Wait","unit":"Count"},
+             {"name":"netstat_tcp_none","rename":}
+
+         ]
+        }
       }
     }
