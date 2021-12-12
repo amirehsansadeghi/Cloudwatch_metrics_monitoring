@@ -1,34 +1,70 @@
-"metrics": {
-    "metrics_collected": {
-      "cpu":{
-          "measurment":[
-             {"name":"cpu_usage_idle","rename":"CPU_USAGE_IDLE","unit":"Percent"},
-             {"name":"cpu_usage_system","rename":"CPU_USAGE_SYSTEM","unit":"Percent"},
-          ]
-       "mem":{
-         "measurment":[
-             {"name":"mem_available","rename":"Memory_Available","unit":"Bytes"},
-             {"name":"mem_available_percent","rename":"Memory_Available_Precent","units":"Percent"},
-             {"name":"mem_used_percent","rename":"Memory_Used_Percent","units":"Percent"},
-             {"name":"mem_free","rename":"Memory_Free","units":"Bytes"},
-             {"name":"mem_total","rename":"Memory_Total","units":"Bytes"},
-             {"name":"mem_used","rename":"Memory_Used","unit":"Bytes"},
-         ]   
-        }  
-        "disk":{
-          "measurment":[
-              {"name":"disk_used_percent","rename":"Disk_Used_Percent","unit":"Percent"},
-              {"name":"disk_total","rename":"Disk_Total","untit":"Bytes"},
-              {"name":"disk_used","rename":"Disk_Used","untit":"Bytes"},
-              {"name":"disk_free","rename":"Disk_Free","untit":"Bytes"}
-          ]
+{
+    "agent": {
+        "metrics_collection_interval": 60,
+        "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+      },
+    "metrics":{
+        "metrics_collected": {
+            "cpu":{
+                "resources": [
+                    "*"
+                  ],
+                "measurment":[
+                    {"name":"cpu_usage_idle","rename":"CPU_USAGE_IDLE","unit":"Percent"},
+                    {"name":"cpu_usage_system","rename":"CPU_USAGE_SYSTEM","unit":"Percent"}
+                ],
+                    "metrics_collection_interval":60
+                },
+            "mem":{
+                "resources": [
+                    "*"
+                  ],
+                "measurment":[
+                    {"name":"mem_available","rename":"Memory_Available","unit":"Gigabytes"},
+                    {"name":"mem_available_percent","rename":"Memory_Available_Precent","units":"Percent"},
+                    {"name":"mem_used_percent","rename":"Memory_Used_Percent","units":"Percent"},
+                    {"name":"mem_free","rename":"Memory_Free","units":"Gigabytes"},
+                    {"name":"mem_total","rename":"Memory_Total","units":"Gigabytes"},
+                    {"name":"mem_used","rename":"Memory_Used","unit":"Gigabytes"}
+                ],
+                "metrics_collection_interval":60
+                } , 
+           "disk":{
+            "resources": [
+                "/",
+                "/tmp"],
+            "measurment":[
+                {"name":"disk_used_percent","rename":"Disk_Used_Percent","unit":"Percent"},
+                {"name":"disk_total","rename":"Disk_Total","untit":"Gigabytes"},
+                {"name":"disk_used","rename":"Disk_Used","untit":"Gigabytes"},
+                {"name":"disk_free","rename":"Disk_Free","untit":"Gigabytes"}
+            ],
+            "metrics_collection_interval":60
+            },
+            "net":{
+                "resources": [
+                    "*"
+                  ],
+                "measurement":[
+                    {"name":"netstat_tcp_established","rename":"TCP_Establiched_Connection","unit":"Count"},
+                    {"name":"netstat_tcp_time_wait","rename":"TCP_Time_Wait","unit":"Count"},
+                    {"name":"netstat_tcp_none","rename":"Tcp_None_Connection","unit":"Count"},
+                    {"name":"netstat_tcp_close","rename":"Tcp_Close_Connection","unit":"Count"},
+                    {"name":"netstat_tcp_close_wait","rename":"Tcp_Close_Wait_Connection","unit":"Count"}
+                ],
+                "metrics_collection_interval":60
+            },
+            "swap":{
+                "resources": [
+                    "*"
+                  ],
+                "measurement":[
+                    {"name":"swap_free","rename":"Swap_Free_Space","unit":"Gigabytes"},
+                    {"name":"swap_used","rename":"Swap_Used_Space","unit":"Gigabytes"},
+                    {"name":"swap_used_percent","rename":"Swap_Used_Space","unit":"Percent"}
+                ],
+                "metrics_collection_interval":60
+            }
         }
-        "net":{
-         "measurement":[
-             {"name":"netstat_tcp_established","rename":"TCP_Establiched_Connection","unit":"Count"},
-             {"name":"netstat_tcp_time_wait","rename":"TCP_Time_Wait","unit":"Count"},
-             {"name":"netstat_tcp_none","rename":"Tcp_None_Connection","unit":"Count"}
-         ]
-        }
-      }
-    }
+    }    
+}
