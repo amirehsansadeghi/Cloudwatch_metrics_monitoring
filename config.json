@@ -27,8 +27,7 @@
          "measurement":[
              {"name":"netstat_tcp_established","rename":"TCP_Establiched_Connection","unit":"Count"},
              {"name":"netstat_tcp_time_wait","rename":"TCP_Time_Wait","unit":"Count"},
-             {"name":"netstat_tcp_none","rename":}
-
+             {"name":"netstat_tcp_none","rename":"Tcp_None_Connection","unit":"Count"}
          ]
         }
       }
