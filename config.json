@@ -9,7 +9,7 @@
                 "resources": [
                     "*"
                   ],
-                "measurment":[
+                "measurement":[
                     {"name":"cpu_usage_idle","rename":"CPU_USAGE_IDLE","unit":"Percent"},
                     {"name":"cpu_usage_system","rename":"CPU_USAGE_SYSTEM","unit":"Percent"}
                 ],
@@ -19,7 +19,7 @@
                 "resources": [
                     "*"
                   ],
-                "measurment":[
+                "measurement":[
                     {"name":"mem_available","rename":"Memory_Available","unit":"Gigabytes"},
                     {"name":"mem_available_percent","rename":"Memory_Available_Precent","units":"Percent"},
                     {"name":"mem_used_percent","rename":"Memory_Used_Percent","units":"Percent"},
@@ -33,7 +33,7 @@
             "resources": [
                 "/",
                 "/tmp"],
-            "measurment":[
+            "measurement":[
                 {"name":"disk_used_percent","rename":"Disk_Used_Percent","unit":"Percent"},
                 {"name":"disk_total","rename":"Disk_Total","untit":"Gigabytes"},
                 {"name":"disk_used","rename":"Disk_Used","untit":"Gigabytes"},
@@ -41,7 +41,7 @@
             ],
             "metrics_collection_interval":60
             },
-            "net":{
+            "netstat":{
                 "resources": [
                     "*"
                   ],
